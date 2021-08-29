@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vim编辑器与Shell命令脚本</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="SuperSonnya">
+    
+    <link rel="preload" href="/assets/css/0.styles.dd55fbe0.css" as="style"><link rel="preload" href="/assets/js/app.93b6cd49.js" as="script"><link rel="preload" href="/assets/js/2.2253adde.js" as="script"><link rel="preload" href="/assets/js/54.5a1babd6.js" as="script"><link rel="prefetch" href="/assets/js/10.5dec0774.js"><link rel="prefetch" href="/assets/js/11.30b58c3b.js"><link rel="prefetch" href="/assets/js/12.7df67dbb.js"><link rel="prefetch" href="/assets/js/13.9dca66f7.js"><link rel="prefetch" href="/assets/js/14.b0f40cb3.js"><link rel="prefetch" href="/assets/js/15.56f35522.js"><link rel="prefetch" href="/assets/js/16.c4926ac6.js"><link rel="prefetch" href="/assets/js/17.0c698d51.js"><link rel="prefetch" href="/assets/js/18.dbfe753c.js"><link rel="prefetch" href="/assets/js/19.7ea231de.js"><link rel="prefetch" href="/assets/js/20.7f460317.js"><link rel="prefetch" href="/assets/js/21.429f3f94.js"><link rel="prefetch" href="/assets/js/22.80cc00ff.js"><link rel="prefetch" href="/assets/js/23.a18d61ab.js"><link rel="prefetch" href="/assets/js/24.e9fd6659.js"><link rel="prefetch" href="/assets/js/25.121e9077.js"><link rel="prefetch" href="/assets/js/26.2149a157.js"><link rel="prefetch" href="/assets/js/27.be591007.js"><link rel="prefetch" href="/assets/js/28.a53ce973.js"><link rel="prefetch" href="/assets/js/29.2261a8a6.js"><link rel="prefetch" href="/assets/js/3.c4daecea.js"><link rel="prefetch" href="/assets/js/30.be11d323.js"><link rel="prefetch" href="/assets/js/31.2cf444e7.js"><link rel="prefetch" href="/assets/js/32.2b52f9fd.js"><link rel="prefetch" href="/assets/js/33.a3ba608c.js"><link rel="prefetch" href="/assets/js/34.34512653.js"><link rel="prefetch" href="/assets/js/35.f8f223fa.js"><link rel="prefetch" href="/assets/js/36.f115988c.js"><link rel="prefetch" href="/assets/js/37.4c7e6e04.js"><link rel="prefetch" href="/assets/js/38.1cdca227.js"><link rel="prefetch" href="/assets/js/39.05b091ea.js"><link rel="prefetch" href="/assets/js/4.5cbb48da.js"><link rel="prefetch" href="/assets/js/40.cc1c352c.js"><link rel="prefetch" href="/assets/js/41.1eb9a1c9.js"><link rel="prefetch" href="/assets/js/42.ee229038.js"><link rel="prefetch" href="/assets/js/43.35fddbf0.js"><link rel="prefetch" href="/assets/js/44.0ae96073.js"><link rel="prefetch" href="/assets/js/45.c74868e1.js"><link rel="prefetch" href="/assets/js/46.a35051d4.js"><link rel="prefetch" href="/assets/js/47.8ea5c2bb.js"><link rel="prefetch" href="/assets/js/48.88010d18.js"><link rel="prefetch" href="/assets/js/49.9f17e638.js"><link rel="prefetch" href="/assets/js/5.63e92375.js"><link rel="prefetch" href="/assets/js/50.69c7affc.js"><link rel="prefetch" href="/assets/js/51.df306da7.js"><link rel="prefetch" href="/assets/js/52.6652cb38.js"><link rel="prefetch" href="/assets/js/53.2f733d62.js"><link rel="prefetch" href="/assets/js/55.f0d63b85.js"><link rel="prefetch" href="/assets/js/56.428fbcee.js"><link rel="prefetch" href="/assets/js/57.8b343c5b.js"><link rel="prefetch" href="/assets/js/58.c80522b1.js"><link rel="prefetch" href="/assets/js/59.71b9f9a3.js"><link rel="prefetch" href="/assets/js/6.6882a093.js"><link rel="prefetch" href="/assets/js/60.fa0ad234.js"><link rel="prefetch" href="/assets/js/61.da80e24e.js"><link rel="prefetch" href="/assets/js/62.176d4566.js"><link rel="prefetch" href="/assets/js/63.dba232aa.js"><link rel="prefetch" href="/assets/js/64.a3911114.js"><link rel="prefetch" href="/assets/js/65.1b266817.js"><link rel="prefetch" href="/assets/js/66.156b5867.js"><link rel="prefetch" href="/assets/js/67.5dde4306.js"><link rel="prefetch" href="/assets/js/68.482d578f.js"><link rel="prefetch" href="/assets/js/69.52471978.js"><link rel="prefetch" href="/assets/js/7.2d1feebb.js"><link rel="prefetch" href="/assets/js/70.af8e117d.js"><link rel="prefetch" href="/assets/js/71.0316cd26.js"><link rel="prefetch" href="/assets/js/72.a1dc6e07.js"><link rel="prefetch" href="/assets/js/73.55bba6f9.js"><link rel="prefetch" href="/assets/js/74.975e7923.js"><link rel="prefetch" href="/assets/js/8.f6762bec.js"><link rel="prefetch" href="/assets/js/9.ef2a9791.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.dd55fbe0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/logo.png" alt="" class="logo"> <!----></a> <div class="links"><!----> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="专升本" class="dropdown-title"><span class="title">专升本</span> <span class="arrow down"></span></button> <button type="button" aria-label="专升本" class="mobile-dropdown-title"><span class="title">专升本</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/topup/english/" class="nav-link">
+  英语
+</a></li><li class="dropdown-item"><!----> <a href="/topup/chinese/" class="nav-link">
+  语文
+</a></li><li class="dropdown-item"><!----> <a href="/topup/accountant/" class="nav-link">
+  会计
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/database/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/database/oracle/" class="nav-link">
+  Oracle
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程语言" class="dropdown-title"><span class="title">编程语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="编程语言" class="mobile-dropdown-title"><span class="title">编程语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/programlangs/golang/" class="nav-link">
+  Golang
+</a></li><li class="dropdown-item"><!----> <a href="/programlangs/clang/" class="nav-link">
+  Clang
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/front/vue/" class="nav-link">
+  Vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="操作系统" class="dropdown-title"><span class="title">操作系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="操作系统" class="mobile-dropdown-title"><span class="title">操作系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link router-link-active">
+  Linux
+</a></li></ul></div></div><div class="nav-item"><a href="/virtualsofts/" class="nav-link">
+  虚拟化软件
+</a></div><div class="nav-item"><a href="/storage/" class="nav-link">
+  存储
+</a></div><div class="nav-item"><a href="/switch/" class="nav-link">
+  交换机
+</a></div><div class="nav-item"><a href="/middleware/" class="nav-link">
+  中间件
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="语言" class="dropdown-title"><span class="title">语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="语言" class="mobile-dropdown-title"><span class="title">语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/langue/english/" class="nav-link">
+  英语
+</a></li><li class="dropdown-item"><!----> <a href="/langue/french/" class="nav-link">
+  法语
+</a></li></ul></div></div><div class="nav-item"><a href="/office/" class="nav-link">
+  办公
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="笔记" class="dropdown-title"><span class="title">笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="笔记" class="mobile-dropdown-title"><span class="title">笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/readingnotes/books/" class="nav-link">
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/readingnotes/others/" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="专升本" class="dropdown-title"><span class="title">专升本</span> <span class="arrow down"></span></button> <button type="button" aria-label="专升本" class="mobile-dropdown-title"><span class="title">专升本</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/topup/english/" class="nav-link">
+  英语
+</a></li><li class="dropdown-item"><!----> <a href="/topup/chinese/" class="nav-link">
+  语文
+</a></li><li class="dropdown-item"><!----> <a href="/topup/accountant/" class="nav-link">
+  会计
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/database/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/database/oracle/" class="nav-link">
+  Oracle
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程语言" class="dropdown-title"><span class="title">编程语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="编程语言" class="mobile-dropdown-title"><span class="title">编程语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/programlangs/golang/" class="nav-link">
+  Golang
+</a></li><li class="dropdown-item"><!----> <a href="/programlangs/clang/" class="nav-link">
+  Clang
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/front/vue/" class="nav-link">
+  Vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="操作系统" class="dropdown-title"><span class="title">操作系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="操作系统" class="mobile-dropdown-title"><span class="title">操作系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link router-link-active">
+  Linux
+</a></li></ul></div></div><div class="nav-item"><a href="/virtualsofts/" class="nav-link">
+  虚拟化软件
+</a></div><div class="nav-item"><a href="/storage/" class="nav-link">
+  存储
+</a></div><div class="nav-item"><a href="/switch/" class="nav-link">
+  交换机
+</a></div><div class="nav-item"><a href="/middleware/" class="nav-link">
+  中间件
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="语言" class="dropdown-title"><span class="title">语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="语言" class="mobile-dropdown-title"><span class="title">语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/langue/english/" class="nav-link">
+  英语
+</a></li><li class="dropdown-item"><!----> <a href="/langue/french/" class="nav-link">
+  法语
+</a></li></ul></div></div><div class="nav-item"><a href="/office/" class="nav-link">
+  办公
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="笔记" class="dropdown-title"><span class="title">笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="笔记" class="mobile-dropdown-title"><span class="title">笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/readingnotes/books/" class="nav-link">
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/readingnotes/others/" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Linux就该这样学</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/os/linux/" aria-current="page" class="sidebar-link">01</a></li><li><a href="/os/linux/02.html" class="sidebar-link">02</a></li><li><a href="/os/linux/03.html" class="sidebar-link">03</a></li><li><a href="/os/linux/04.html" aria-current="page" class="active sidebar-link">04</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/os/linux/05.html" class="sidebar-link">05</a></li><li><a href="/os/linux/06.html" class="sidebar-link">06</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Linux</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="_1、vim文本编辑器"><a href="#_1、vim文本编辑器" class="header-anchor">#</a> 1、Vim文本编辑器</h3> <ul><li>命令模式：控制光标移动，可对文本进行复制、粘贴、删除和查找等工作。</li> <li>输入模式：正常的文本录入。</li> <li>末行模式：保存或退出文档，以及设置编辑环境。</li></ul> <h4 id="_1-1、vim常用命令"><a href="#_1-1、vim常用命令" class="header-anchor">#</a> 1.1、Vim常用命令</h4> <table><thead><tr><th>命令</th> <th>作用</th></tr></thead> <tbody><tr><td><code>dd</code></td> <td>删除（剪切）光标所在整行</td></tr> <tr><td><code>5dd</code></td> <td>删除（剪切）从光标处开始的5行</td></tr> <tr><td><code>yy</code></td> <td>复制光标所在整行</td></tr> <tr><td><code>5yy</code></td> <td>复制从光标处开始的5行</td></tr> <tr><td><code>n</code></td> <td>显示搜索命令定位到的下一个字符串</td></tr> <tr><td><code>N</code></td> <td>显示搜索命令定位到的上一个字符串</td></tr> <tr><td><code>u</code></td> <td>撤销上一步的操作</td></tr> <tr><td><code>p</code></td> <td>将之前删除（dd）或复制（yy）过的数据粘贴到光标后面</td></tr></tbody></table> <h4 id="_1-2、末行模式中可用命令"><a href="#_1-2、末行模式中可用命令" class="header-anchor">#</a> 1.2、末行模式中可用命令</h4> <table><thead><tr><th>命令</th> <th>作用</th></tr></thead> <tbody><tr><td><code>:w</code></td> <td>保存</td></tr> <tr><td><code>:q</code></td> <td>退出</td></tr> <tr><td><code>:q!</code></td> <td>强制退出（放弃对文档的修改内容）</td></tr> <tr><td><code>:wq!</code></td> <td>强制保存退出</td></tr> <tr><td><code>:set nu</code></td> <td>显示行号</td></tr> <tr><td><code>:set nonu</code></td> <td>不显示行号</td></tr> <tr><td><code>:命令</code></td> <td>执行该命令</td></tr> <tr><td><code>:整数</code></td> <td>跳转到该行</td></tr> <tr><td><code>:s/one/two</code></td> <td>将当前光标所在行的第一个one替换成two</td></tr> <tr><td><code>:s/one/two/g</code></td> <td>将当前光标所在行的所有one替换成two</td></tr> <tr><td><code>:%s/one/two/g</code></td> <td>将全文中的所有one替换成two</td></tr> <tr><td><code>?字符串</code></td> <td>在文本中从下至上搜索该字符串</td></tr> <tr><td><code>/字符串</code></td> <td>在文本中从上至下搜索该字符串</td></tr></tbody></table> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># 1. 配置主机名称</span>
+<span class="token comment">## hostname查看当前主机名称</span>
+<span class="token function">vim</span> /etc/hostname
+<span class="token comment"># 2. 配置网卡信息</span>
+<span class="token function">vim</span> /etc/sysconfig/network-scripts/ifcfg-*
+<span class="token assign-left variable">TYPE</span><span class="token operator">=</span>Ethernet
+<span class="token assign-left variable">BOOTPROTO</span><span class="token operator">=</span>static
+<span class="token assign-left variable">NAME</span><span class="token operator">=</span>eno16777736
+<span class="token assign-left variable">ONBOOT</span><span class="token operator">=</span>yes
+<span class="token assign-left variable">IPADDR</span><span class="token operator">=</span><span class="token number">192.168</span>.10.10
+<span class="token assign-left variable">NETMASK</span><span class="token operator">=</span><span class="token number">255.255</span>.255.0
+<span class="token assign-left variable">GATEWAY</span><span class="token operator">=</span><span class="token number">192.168</span>.10.1
+<span class="token assign-left variable">DNS1</span><span class="token operator">=</span><span class="token number">192.168</span>.10.1
+<span class="token comment"># 3. 配置Yum软件仓库</span>
+<span class="token builtin class-name">cd</span> /etc/yum.repos.d
+<span class="token comment">## 创建一个名为rhel7.repo的新配置文件,后缀必须为.repo</span>
+<span class="token punctuation">[</span>rhel-media<span class="token punctuation">]</span> ：Yum软件仓库唯一标识符，避免与其他仓库冲突。
+<span class="token assign-left variable">name</span><span class="token operator">=</span>linuxprobe：Yum软件仓库的名称描述，易于识别仓库用处。
+<span class="token assign-left variable">baseurl</span><span class="token operator">=</span>file:///media/cdrom：提供的方式包括FTP（ftp://<span class="token punctuation">..</span>）、HTTP（http://<span class="token punctuation">..</span>）、本地（file:///<span class="token punctuation">..</span>）。
+<span class="token assign-left variable">enabled</span><span class="token operator">=</span><span class="token number">1</span>：设置此源是否可用；1为可用，0为禁用。
+<span class="token assign-left variable">gpgcheck</span><span class="token operator">=</span><span class="token number">1</span>：设置此源是否校验文件；1为校验，0为不校验。
+<span class="token assign-left variable">gpgkey</span><span class="token operator">=</span>file:///media/cdrom/RPM-GPG-KEY-redhat-release：若上面参数开启校验，那么请指定公钥文件地址。
+<span class="token comment">## 按配置参数的路径挂载光盘，并把光盘挂载信息写入到/etc/fstab文件中</span>
+<span class="token comment">## 使用yum install httpd -y命令检查Yum软件仓库是否已经可用</span>
+</code></pre></div><h3 id="_2、编写shell脚本"><a href="#_2、编写shell脚本" class="header-anchor">#</a> 2、编写Shell脚本</h3> <ul><li><p>Shell脚本命令的工作方式有两种</p> <ul><li><p>交互式<code>Interactive</code>：用户每输入一条命令就立即执行。</p></li> <li><p>批处理<code>Batch</code>：由用户事先编写好一个完整的<code>Shell</code>脚本，<code>Shell</code>会一次性执行脚本中的命令。</p></li></ul></li></ul> <h4 id="_2-1、简单脚本"><a href="#_2-1、简单脚本" class="header-anchor">#</a> 2.1、简单脚本</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token shebang important">#!/bin/bash </span>
+<span class="token comment">#For Example</span>
+<span class="token builtin class-name">pwd</span>
+<span class="token comment"># 第一行的脚本声明（#!）用来告诉系统使用哪种Shell解释器来执行该脚本</span>
+<span class="token comment"># 第二行的注释信息（#）是对脚本功能和某些命令的介绍信息,脚本的作用或一些警告信息 </span>
+</code></pre></div><h4 id="_2-2、接收用户的参数"><a href="#_2-2、接收用户的参数" class="header-anchor">#</a> 2.2、接收用户的参数</h4> <ul><li><code>Shell</code>脚本语言内设了用于接收参数的变量，变量之间可以使用空格间隔。<code>$0</code>对应的是当前<code>Shell</code>脚本程序的名称，<code>$#</code>对应的是总共有几个参数，<code>$*</code>对应的是所有位置的参数值，<code>$?</code>对应的是显示上一条命令的执行返回值，而<code>$1、$2、$3</code>……则分别对应着第<code>N</code>个位置的参数值。</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;当前脚本名称为<span class="token variable">$0</span>&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;总共有<span class="token variable">$#</span>个参数，分别是<span class="token variable">$*</span>。&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;第1个参数为<span class="token variable">$1</span>，第5个为<span class="token variable">$5</span>。&quot;</span>
+</code></pre></div><h4 id="_2-3、判断用户的参数"><a href="#_2-3、判断用户的参数" class="header-anchor">#</a> 2.3、判断用户的参数</h4> <ul><li><p>测试语句格式：[ 条件表达式 ]，条件表达式两边均应有一个空格。</p></li> <li><p>按照测试对象来划分，条件测试语句可以分为4种：</p> <ul><li><p>文件测试语句：判断文件是否存在或权限是否满足等情况的运算符。</p> <table><thead><tr><th>运算符</th> <th>作用</th></tr></thead> <tbody><tr><td><code>-d</code></td> <td>测试文件是否为目录类型</td></tr> <tr><td><code>-e</code></td> <td>测试文件是否存在</td></tr> <tr><td><code>-f</code></td> <td>判断是否为一般文件</td></tr> <tr><td><code>-r</code></td> <td>测试当前用户是否有权限读取</td></tr> <tr><td><code>-w</code></td> <td>测试当前用户是否有权限写入</td></tr> <tr><td><code>-x</code></td> <td>测试当前用户是否有权限执行</td></tr></tbody></table></li> <li><p>逻辑测试语句：用于对测试结果进行逻辑分析。</p> <ul><li><p>逻辑<code>与</code>运算符号是<code>&amp;&amp;</code>，前面的命令执行成功后才会执行后面的命令。</p></li> <li><p>逻辑<code>或</code>运算符号为<code>||</code>，前面的命令执行失败后才会执行后面的命令。</p></li> <li><p>逻辑<code>非</code>运算符号为<code>！</code>，表示把条件测试中的判断结果取相反值。</p> <div class="language-shell extra-class"><pre class="language-shell"><code>      <span class="token comment"># 判断/dev/cdrom文件是否存在</span>
+<span class="token punctuation">[</span> -e /dev/cdrom <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;Exist&quot;</span>
+<span class="token comment"># 结合系统环境变量USER来判断当前登录的用户是否为非管理员身份</span>
+<span class="token punctuation">[</span> <span class="token environment constant">$USER</span> <span class="token operator">=</span> root <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;user&quot;</span>
+<span class="token comment"># 判断当前用户是否为一个非管理员的用户</span>
+<span class="token punctuation">[</span> <span class="token operator">!</span> <span class="token environment constant">$USER</span> <span class="token operator">=</span> root <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;administrator&quot;</span>
+</code></pre></div></li></ul></li> <li><p>整数值比较语句：整数比较运算符仅是对数字的操作，不能将数字与字符串、文件等内容一起操作，而且不能想当然地使用日常生活中的等号、大于号、小于号等来判断。因为等号与赋值命令符冲突，大于号和小于号分别与输出重定向命令符和输入重定向命令符冲突。因此一定要使用规范的整数比较运算符来进行操作。</p> <table><thead><tr><th>运算符</th> <th>作用</th></tr></thead> <tbody><tr><td><code>-eq</code></td> <td>是否等于</td></tr> <tr><td><code>-ne</code></td> <td>是否不等于</td></tr> <tr><td><code>-gt</code></td> <td>是否大于</td></tr> <tr><td><code>-lt</code></td> <td>是否小于</td></tr> <tr><td><code>-le</code></td> <td>是否等于或小于</td></tr> <tr><td><code>-ge</code></td> <td>是否大于或等于</td></tr></tbody></table></li> <li><p>字符串比较语句：用于判断测试字符串是否为空值，或两个字符串是否相同。</p> <table><thead><tr><th>运算符</th> <th>作用</th></tr></thead> <tbody><tr><td><code>=</code></td> <td>比较字符串内容是否相同</td></tr> <tr><td><code>!=</code></td> <td>比较字符串内容是否不同</td></tr> <tr><td><code>-z</code></td> <td>判断字符串内容是否为空</td></tr></tbody></table></li></ul></li></ul> <h3 id="_3、流程控制语句"><a href="#_3、流程控制语句" class="header-anchor">#</a> 3、流程控制语句</h3> <h4 id="_3-1、if条件测试语句"><a href="#_3-1、if条件测试语句" class="header-anchor">#</a> 3.1、if条件测试语句</h4> <ul><li><p><code>if</code>条件测试语句可以让脚本根据实际情况自动执行相应的命令，分为单分支结构、双分支结构、多分支结构</p> <ul><li>单分支结构：由<code>if、then、fi</code>关键词组成。</li> <li>双分支结构：由<code>if、then、else、fi</code>关键词组成。</li> <li>多分支结构：由<code>if、then、else、elif、fi</code>关键词组成。</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token builtin class-name">read</span> -p <span class="token string">&quot;Enter your score（0-100）：&quot;</span> GRADE
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$GRADE</span> -ge <span class="token number">85</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> <span class="token variable">$GRADE</span> -le <span class="token number">100</span> <span class="token punctuation">]</span> <span class="token punctuation">;</span> <span class="token keyword">then</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$GRADE</span> is Excellent&quot;</span>
+<span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token variable">$GRADE</span> -ge <span class="token number">70</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> <span class="token variable">$GRADE</span> -le <span class="token number">84</span> <span class="token punctuation">]</span> <span class="token punctuation">;</span> <span class="token keyword">then</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$GRADE</span> is Pass&quot;</span>
+<span class="token keyword">else</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$GRADE</span> is Fail&quot;</span> 
+<span class="token keyword">fi</span>
+</code></pre></div></li></ul> <h4 id="_3-2、for条件循环语句"><a href="#_3-2、for条件循环语句" class="header-anchor">#</a> 3.2、for条件循环语句</h4> <ul><li><code>for</code>循环语句允许脚本一次性读取多个信息，然后逐一对信息进行操作处理，当要处理的数据有范围时，使用<code>for</code>循环语句。<code>for 变量名 in 取值列表 do 命令序列 done</code>。</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token builtin class-name">read</span> -p <span class="token string">&quot;Enter The Users Password : &quot;</span> PASSWD
+<span class="token keyword">for</span> <span class="token for-or-select variable">UNAME</span> <span class="token keyword">in</span> <span class="token variable"><span class="token variable">`</span><span class="token function">cat</span> users.txt<span class="token variable">`</span></span>
+<span class="token keyword">do</span>
+<span class="token comment"># id 用户名: 查看用户的信息</span>
+<span class="token comment"># /dev/null是一个被称作Linux黑洞的文件，把输出信息重定向到这个文件等同于删除数据</span>
+<span class="token comment"># 让用户的屏幕窗口保持简洁</span>
+<span class="token function">id</span> <span class="token variable">$UNAME</span> <span class="token operator">&amp;&gt;</span> /dev/null
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -eq <span class="token number">0</span> <span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Already exists&quot;</span>
+<span class="token keyword">else</span>
+<span class="token function">useradd</span> <span class="token variable">$UNAME</span> <span class="token operator">&amp;&gt;</span> /dev/null
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$PASSWD</span>&quot;</span> <span class="token operator">|</span> <span class="token function">passwd</span> --stdin <span class="token variable">$UNAME</span> <span class="token operator">&amp;&gt;</span> /dev/null
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -eq <span class="token number">0</span> <span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$UNAME</span> , Create success&quot;</span>
+<span class="token keyword">else</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$UNAME</span> , Create failure&quot;</span>
+<span class="token keyword">fi</span>
+<span class="token keyword">fi</span>
+<span class="token keyword">done</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token assign-left variable">HLIST</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">cat</span> ~/ipadds.txt<span class="token variable">)</span></span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">IP</span> <span class="token keyword">in</span> <span class="token variable">$HLIST</span>
+<span class="token keyword">do</span>
+<span class="token function">ping</span> -c <span class="token number">3</span> -i <span class="token number">0.2</span> -W <span class="token number">3</span> <span class="token variable">$IP</span> <span class="token operator">&amp;&gt;</span> /dev/null
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> -eq <span class="token number">0</span> <span class="token punctuation">]</span> <span class="token punctuation">;</span> <span class="token keyword">then</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Host <span class="token variable">$IP</span> is On-line.&quot;</span>
+<span class="token keyword">else</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Host <span class="token variable">$IP</span> is Off-line.&quot;</span>
+<span class="token keyword">fi</span>
+<span class="token keyword">done</span>
+</code></pre></div><h4 id="_3-3、while条件循环语句"><a href="#_3-3、while条件循环语句" class="header-anchor">#</a> 3.3、while条件循环语句</h4> <ul><li>让脚本根据某些条件来重复执行命令的语句，它的循环结构往往在执行前并不确定最终执行的次数。通过判断条件测试的真假来决定是否继续执行命令，若条件为真就继续执行，为假就结束循环。<code>while 条件测试操作 do 命令序列 done</code>。</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token assign-left variable">PRICE</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">expr</span> <span class="token environment constant">$RANDOM</span> % <span class="token number">1000</span><span class="token variable">)</span></span>
+<span class="token assign-left variable">TIMES</span><span class="token operator">=</span><span class="token number">0</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;商品实际价格为0-999之间，猜猜看是多少？&quot;</span>
+<span class="token keyword">while</span> <span class="token boolean">true</span>
+<span class="token keyword">do</span>
+<span class="token builtin class-name">read</span> -p <span class="token string">&quot;请输入您猜测的价格数目：&quot;</span> INT
+<span class="token builtin class-name">let</span> TIMES++
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$INT</span> -eq <span class="token variable">$PRICE</span> <span class="token punctuation">]</span> <span class="token punctuation">;</span> <span class="token keyword">then</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;恭喜您答对了，实际价格是 <span class="token variable">$PRICE</span>&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;您总共猜测了 <span class="token variable">$TIMES</span> 次&quot;</span>
+<span class="token builtin class-name">exit</span> <span class="token number">0</span>
+<span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token variable">$INT</span> -gt <span class="token variable">$PRICE</span> <span class="token punctuation">]</span> <span class="token punctuation">;</span> <span class="token keyword">then</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;太高了！&quot;</span>
+<span class="token keyword">else</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;太低了！&quot;</span>
+<span class="token keyword">fi</span>
+<span class="token keyword">done</span>
+</code></pre></div><h4 id="_3-4、case条件测试语句"><a href="#_3-4、case条件测试语句" class="header-anchor">#</a> 3.4、case条件测试语句</h4> <ul><li>在多个范围内匹配数据，若匹配成功则执行相关命令并结束整个条件测试；而如果数据不在所列出的范围内，则会去执行星号<code>*)</code>中所定义的默认命令。</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token builtin class-name">read</span> -p <span class="token string">&quot;请输入一个字符，并按Enter键确认：&quot;</span> KEY
+<span class="token keyword">case</span> <span class="token string">&quot;<span class="token variable">$KEY</span>&quot;</span> <span class="token keyword">in</span>
+<span class="token punctuation">[</span>a-z<span class="token punctuation">]</span><span class="token operator">|</span><span class="token punctuation">[</span>A-Z<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;您输入的是 字母。&quot;</span>
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span><span class="token number">0</span>-9<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;您输入的是 数字。&quot;</span>
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
+*<span class="token punctuation">)</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;您输入的是 空格、功能键或其他控制字符。&quot;</span>
+<span class="token keyword">esac</span>
+</code></pre></div><h3 id="_4、计划任务服务程序"><a href="#_4、计划任务服务程序" class="header-anchor">#</a> 4、计划任务服务程序</h3> <ul><li><p>计划任务分为一次性计划任务与长期性计划任务</p> <ul><li>一次性计划任务：只执行一次：<code>at 时间</code>。查看已设置好但还未执行的一次性计划任务，使用<code>at -l</code>；将其删除，用<code>atrm 任务序号</code>。</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code>at <span class="token number">23</span>:30
+at <span class="token operator">&gt;</span> systemctl restart httpd
+at <span class="token operator">&gt;</span> 按下Ctrl + D结束编写计划任务
+</code></pre></div><ul><li>长期性计划任务：在一段时间内的多次定时执行：创建、编辑计划任务的命令为<code>crontab -e</code>，查看当前计划任务的命令为<code>crontab -l</code>，删除某条计划任务的命令为<code>crontab -r</code>。如果以管理员的身份登录的系统，在<code>crontab</code>命令中加上<code>-u</code>参数来编辑他人的计划任务。设置任务参数格式：<code>分、时、日、月、星期 命令</code>。字段没有设置，需使用<code>*</code>占位。</li></ul> <table><thead><tr><th>字段</th> <th>说明</th></tr></thead> <tbody><tr><td>分</td> <td>取值为0～59的整数</td></tr> <tr><td>时</td> <td>取值为0～23的任意整数</td></tr> <tr><td>日</td> <td>取值为1～31的任意整数</td></tr> <tr><td>月</td> <td>取值为1～12的任意整数</td></tr> <tr><td>星期</td> <td>取值为0～7的任意整数，其中0与7均为星期日</td></tr> <tr><td>命令</td> <td>要执行的命令或程序脚本</td></tr></tbody></table></li> <li><p>用逗号<code>,</code>来分别表示多个时间段，例如<code>8,9,12</code>表示<code>8月、9月和12月</code>。用减号<code>-</code>表示一段连续的时间周期，例如字段<code>日</code>的取值为<code>12-15</code>，则表示每月的<code>12～15日</code>。用<code>/</code>表示执行任务的间隔时间，例如<code>/2</code>表示每隔<code>2分钟</code>执行一次任务。</p></li> <li><p>在<code>crond</code>服务的计划任务参数中，所有命令一定要用绝对路径的方式来写，用<code>whereis</code>命令查询命令的绝对路径。</p></li> <li><p>在<code>crond</code>服务的配置参数中，可以像<code>Shell</code>脚本那样以<code>#</code>号开头写上注释信息，快速了解其功能、需求以及编写人员等重要信息。</p></li> <li><p>计划任务中的<code>分</code>字段必须有数值，绝对不能为<code>空</code>或是<code>*</code>号，而<code>日</code>和<code>星期</code>字段不能同时使用，否则就会发生冲突。</p></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/os/linux/03.html" class="prev">
+        03
+      </a></span> <span class="next"><a href="/os/linux/05.html">
+        05
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.93b6cd49.js" defer></script><script src="/assets/js/2.2253adde.js" defer></script><script src="/assets/js/54.5a1babd6.js" defer></script>
+  </body>
+</html>

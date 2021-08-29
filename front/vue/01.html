@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue简介</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="SuperSonnya">
+    
+    <link rel="preload" href="/assets/css/0.styles.dd55fbe0.css" as="style"><link rel="preload" href="/assets/js/app.93b6cd49.js" as="script"><link rel="preload" href="/assets/js/2.2253adde.js" as="script"><link rel="preload" href="/assets/js/13.9dca66f7.js" as="script"><link rel="prefetch" href="/assets/js/10.5dec0774.js"><link rel="prefetch" href="/assets/js/11.30b58c3b.js"><link rel="prefetch" href="/assets/js/12.7df67dbb.js"><link rel="prefetch" href="/assets/js/14.b0f40cb3.js"><link rel="prefetch" href="/assets/js/15.56f35522.js"><link rel="prefetch" href="/assets/js/16.c4926ac6.js"><link rel="prefetch" href="/assets/js/17.0c698d51.js"><link rel="prefetch" href="/assets/js/18.dbfe753c.js"><link rel="prefetch" href="/assets/js/19.7ea231de.js"><link rel="prefetch" href="/assets/js/20.7f460317.js"><link rel="prefetch" href="/assets/js/21.429f3f94.js"><link rel="prefetch" href="/assets/js/22.80cc00ff.js"><link rel="prefetch" href="/assets/js/23.a18d61ab.js"><link rel="prefetch" href="/assets/js/24.e9fd6659.js"><link rel="prefetch" href="/assets/js/25.121e9077.js"><link rel="prefetch" href="/assets/js/26.2149a157.js"><link rel="prefetch" href="/assets/js/27.be591007.js"><link rel="prefetch" href="/assets/js/28.a53ce973.js"><link rel="prefetch" href="/assets/js/29.2261a8a6.js"><link rel="prefetch" href="/assets/js/3.c4daecea.js"><link rel="prefetch" href="/assets/js/30.be11d323.js"><link rel="prefetch" href="/assets/js/31.2cf444e7.js"><link rel="prefetch" href="/assets/js/32.2b52f9fd.js"><link rel="prefetch" href="/assets/js/33.a3ba608c.js"><link rel="prefetch" href="/assets/js/34.34512653.js"><link rel="prefetch" href="/assets/js/35.f8f223fa.js"><link rel="prefetch" href="/assets/js/36.f115988c.js"><link rel="prefetch" href="/assets/js/37.4c7e6e04.js"><link rel="prefetch" href="/assets/js/38.1cdca227.js"><link rel="prefetch" href="/assets/js/39.05b091ea.js"><link rel="prefetch" href="/assets/js/4.5cbb48da.js"><link rel="prefetch" href="/assets/js/40.cc1c352c.js"><link rel="prefetch" href="/assets/js/41.1eb9a1c9.js"><link rel="prefetch" href="/assets/js/42.ee229038.js"><link rel="prefetch" href="/assets/js/43.35fddbf0.js"><link rel="prefetch" href="/assets/js/44.0ae96073.js"><link rel="prefetch" href="/assets/js/45.c74868e1.js"><link rel="prefetch" href="/assets/js/46.a35051d4.js"><link rel="prefetch" href="/assets/js/47.8ea5c2bb.js"><link rel="prefetch" href="/assets/js/48.88010d18.js"><link rel="prefetch" href="/assets/js/49.9f17e638.js"><link rel="prefetch" href="/assets/js/5.63e92375.js"><link rel="prefetch" href="/assets/js/50.69c7affc.js"><link rel="prefetch" href="/assets/js/51.df306da7.js"><link rel="prefetch" href="/assets/js/52.6652cb38.js"><link rel="prefetch" href="/assets/js/53.2f733d62.js"><link rel="prefetch" href="/assets/js/54.5a1babd6.js"><link rel="prefetch" href="/assets/js/55.f0d63b85.js"><link rel="prefetch" href="/assets/js/56.428fbcee.js"><link rel="prefetch" href="/assets/js/57.8b343c5b.js"><link rel="prefetch" href="/assets/js/58.c80522b1.js"><link rel="prefetch" href="/assets/js/59.71b9f9a3.js"><link rel="prefetch" href="/assets/js/6.6882a093.js"><link rel="prefetch" href="/assets/js/60.fa0ad234.js"><link rel="prefetch" href="/assets/js/61.da80e24e.js"><link rel="prefetch" href="/assets/js/62.176d4566.js"><link rel="prefetch" href="/assets/js/63.dba232aa.js"><link rel="prefetch" href="/assets/js/64.a3911114.js"><link rel="prefetch" href="/assets/js/65.1b266817.js"><link rel="prefetch" href="/assets/js/66.156b5867.js"><link rel="prefetch" href="/assets/js/67.5dde4306.js"><link rel="prefetch" href="/assets/js/68.482d578f.js"><link rel="prefetch" href="/assets/js/69.52471978.js"><link rel="prefetch" href="/assets/js/7.2d1feebb.js"><link rel="prefetch" href="/assets/js/70.af8e117d.js"><link rel="prefetch" href="/assets/js/71.0316cd26.js"><link rel="prefetch" href="/assets/js/72.a1dc6e07.js"><link rel="prefetch" href="/assets/js/73.55bba6f9.js"><link rel="prefetch" href="/assets/js/74.975e7923.js"><link rel="prefetch" href="/assets/js/8.f6762bec.js"><link rel="prefetch" href="/assets/js/9.ef2a9791.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.dd55fbe0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/logo.png" alt="" class="logo"> <!----></a> <div class="links"><!----> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="专升本" class="dropdown-title"><span class="title">专升本</span> <span class="arrow down"></span></button> <button type="button" aria-label="专升本" class="mobile-dropdown-title"><span class="title">专升本</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/topup/english/" class="nav-link">
+  英语
+</a></li><li class="dropdown-item"><!----> <a href="/topup/chinese/" class="nav-link">
+  语文
+</a></li><li class="dropdown-item"><!----> <a href="/topup/accountant/" class="nav-link">
+  会计
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/database/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/database/oracle/" class="nav-link">
+  Oracle
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程语言" class="dropdown-title"><span class="title">编程语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="编程语言" class="mobile-dropdown-title"><span class="title">编程语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/programlangs/golang/" class="nav-link">
+  Golang
+</a></li><li class="dropdown-item"><!----> <a href="/programlangs/clang/" class="nav-link">
+  Clang
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/front/vue/" class="nav-link router-link-active">
+  Vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="操作系统" class="dropdown-title"><span class="title">操作系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="操作系统" class="mobile-dropdown-title"><span class="title">操作系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li></ul></div></div><div class="nav-item"><a href="/virtualsofts/" class="nav-link">
+  虚拟化软件
+</a></div><div class="nav-item"><a href="/storage/" class="nav-link">
+  存储
+</a></div><div class="nav-item"><a href="/switch/" class="nav-link">
+  交换机
+</a></div><div class="nav-item"><a href="/middleware/" class="nav-link">
+  中间件
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="语言" class="dropdown-title"><span class="title">语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="语言" class="mobile-dropdown-title"><span class="title">语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/langue/english/" class="nav-link">
+  英语
+</a></li><li class="dropdown-item"><!----> <a href="/langue/french/" class="nav-link">
+  法语
+</a></li></ul></div></div><div class="nav-item"><a href="/office/" class="nav-link">
+  办公
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="笔记" class="dropdown-title"><span class="title">笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="笔记" class="mobile-dropdown-title"><span class="title">笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/readingnotes/books/" class="nav-link">
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/readingnotes/others/" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="专升本" class="dropdown-title"><span class="title">专升本</span> <span class="arrow down"></span></button> <button type="button" aria-label="专升本" class="mobile-dropdown-title"><span class="title">专升本</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/topup/english/" class="nav-link">
+  英语
+</a></li><li class="dropdown-item"><!----> <a href="/topup/chinese/" class="nav-link">
+  语文
+</a></li><li class="dropdown-item"><!----> <a href="/topup/accountant/" class="nav-link">
+  会计
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/database/mysql/" class="nav-link">
+  MySQL
+</a></li><li class="dropdown-item"><!----> <a href="/database/oracle/" class="nav-link">
+  Oracle
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程语言" class="dropdown-title"><span class="title">编程语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="编程语言" class="mobile-dropdown-title"><span class="title">编程语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/programlangs/golang/" class="nav-link">
+  Golang
+</a></li><li class="dropdown-item"><!----> <a href="/programlangs/clang/" class="nav-link">
+  Clang
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/front/vue/" class="nav-link router-link-active">
+  Vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="操作系统" class="dropdown-title"><span class="title">操作系统</span> <span class="arrow down"></span></button> <button type="button" aria-label="操作系统" class="mobile-dropdown-title"><span class="title">操作系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/windows/" class="nav-link">
+  Windows
+</a></li><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li></ul></div></div><div class="nav-item"><a href="/virtualsofts/" class="nav-link">
+  虚拟化软件
+</a></div><div class="nav-item"><a href="/storage/" class="nav-link">
+  存储
+</a></div><div class="nav-item"><a href="/switch/" class="nav-link">
+  交换机
+</a></div><div class="nav-item"><a href="/middleware/" class="nav-link">
+  中间件
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="语言" class="dropdown-title"><span class="title">语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="语言" class="mobile-dropdown-title"><span class="title">语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/langue/english/" class="nav-link">
+  英语
+</a></li><li class="dropdown-item"><!----> <a href="/langue/french/" class="nav-link">
+  法语
+</a></li></ul></div></div><div class="nav-item"><a href="/office/" class="nav-link">
+  办公
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="笔记" class="dropdown-title"><span class="title">笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="笔记" class="mobile-dropdown-title"><span class="title">笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/readingnotes/books/" class="nav-link">
+  读书笔记
+</a></li><li class="dropdown-item"><!----> <a href="/readingnotes/others/" class="nav-link">
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/front/vue/" aria-current="page" class="sidebar-link">概述</a></li><li><a href="/front/vue/01.html" aria-current="page" class="active sidebar-link">Vue简介</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h5 id="什么是vue"><a href="#什么是vue" class="header-anchor">#</a> 什么是Vue</h5> <ul><li>如果不使用 Vue, 那么就会用到 JS 或者 JQuery，通过操作 HTML DOM 的方式，把数据显示上去。</li> <li>如果使用Vue,那么仅仅需要提供数据，以及数据要绑定到的元素的id,就行了,不需要显式地操作HTML DOM。</li></ul> <hr> <h5 id="监听事件"><a href="#监听事件" class="header-anchor">#</a> 监听事件</h5> <div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;div1&quot;&gt;
+  &lt;div&gt;一共点击了  {{clickNumber}}次&lt;/div&gt; 
+  &lt;!-- v-on:简写为@ --&gt;
+  &lt;button v-on:click=&quot;count&quot;&gt;点击&lt;/button&gt;
+&lt;/div&gt;
+&lt;script&gt;
+new Vue({
+      el: '#div1',
+      data: {
+          clickNumber:0
+      },
+      methods:{
+          count: function(){
+              this.clickNumber++;
+          }
+      }
+    })
+&lt;/script&gt;
+
+&lt;!-- 冒泡 --&gt;
+&lt;div id=&quot;content&quot;&gt;
+    &lt;div id=&quot;grandFather&quot;  v-on:click=&quot;doc&quot;&gt;
+        grandFather
+        &lt;div id=&quot;father&quot; v-on:click=&quot;doc&quot;&gt;
+            father
+            &lt;div id=&quot;me&quot; v-on:click=&quot;doc&quot;&gt;
+                me
+                &lt;div id=&quot;son&quot; v-on:click=&quot;doc&quot;&gt;
+                son
+            &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--
+  me的click后面加上.stop，冒泡到这里就结束；
+  father的click加上.capture，优先触发
+  father的click加上.self，子元素无法触发，只有自己能触发
+  father的click加上.once，只触发一次
+  在click后面添加.prevent阻止页面刷新（只有超链和form这种会导致页面刷新的操作，.prevent才起作用）
+--&gt;
+&lt;script&gt;
+    var content = new Vue({
+        el: &quot;#content&quot;,
+        data: {
+            id: ''
+        },
+        methods: {
+            doc: function () {
+                this.id= event.currentTarget.id;
+                alert(this.id)
+            }
+        }
+    })
+&lt;/script&gt;
+</code></pre></div><hr> <h5 id="条件语句"><a href="#条件语句" class="header-anchor">#</a> 条件语句</h5> <div class="language- extra-class"><pre class="language-text"><code>&lt;!--
+  v-if
+  v-else
+  v-else-if
+--&gt;
+&lt;div id=&quot;div1&quot;&gt;
+  &lt;button v-on:click=&quot;toutai&quot;&gt; 看看下辈子投胎是做什么的 &lt;/button&gt;
+  &lt;div v-if=&quot;number&gt;98&quot;&gt; 神仙&lt;/div&gt;
+  &lt;div v-else-if=&quot;number&gt;95&quot;&gt; 国家领导人&lt;/div&gt;
+  &lt;div v-else&gt; 流浪汉&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+new Vue({
+      el: '#div1',
+      data: {
+          number:0
+      },
+      methods:{
+          toutai: function(){
+             this.number=Math.random()*100
+          }
+      }
+    })
+&lt;/script&gt;
+</code></pre></div><hr> <h5 id="循环"><a href="#循环" class="header-anchor">#</a> 循环</h5> <div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;div1&quot;&gt;
+    &lt;table align=&quot;center&quot; &gt;
+        &lt;tr class=&quot;firstLine&quot;&gt;
+            &lt;td&gt;number&lt;/td&gt;
+            &lt;td&gt;name&lt;/td&gt;
+            &lt;td&gt;hp&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr v-for=&quot;hero,index in heros&quot;&gt;
+            &lt;td&gt;{{index+1}}&lt;/td&gt;
+            &lt;td&gt;{{hero.name}}&lt;/td&gt;
+            &lt;td&gt;{{hero.hp}}&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/div&gt;
+&lt;script&gt;
+var data = [
+          {name:&quot;sy&quot;,hp:34},
+    ];
+new Vue({
+      el: '#div1',
+      data: {
+          heros:data
+      }
+    })
+&lt;/script&gt;
+
+&lt;!-- 纯数字遍历 --&gt;
+&lt;div v-for=&quot;i in 10&quot;&gt;
+</code></pre></div><hr> <h5 id="属性绑定"><a href="#属性绑定" class="header-anchor">#</a> 属性绑定</h5> <div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;div1&quot;&gt;
+    &lt;a v-bind:href=&quot;page&quot;&gt;http://12306.com&lt;/a&gt;
+&lt;/div&gt;
+&lt;script&gt;
+new Vue({
+      el: '#div1',
+      data:{
+          page:'http://12306.com'
+      }
+    })
+&lt;/script&gt;
+
+&lt;!--
+  v-bind:href简写成 :href
+--&gt;
+</code></pre></div><hr> <h5 id="双向绑定"><a href="#双向绑定" class="header-anchor">#</a> 双向绑定</h5> <div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;div1&quot;&gt;
+    hero name: &lt;input v-model=&quot;name&quot; &gt;
+    &lt;button @click=&quot;doClick&quot; &gt;提交数据&lt;/button&gt;
+&lt;/div&gt;
+&lt;script&gt;
+new Vue({
+      el: '#div1',
+      data:{
+        name:&quot;teemo&quot;
+      },
+      methods:{
+          doClick:function(){
+              alert(this.name);
+          }
+      }
+    })
+&lt;/script&gt;
+
+&lt;!--修饰符
+  .lazy：失去焦点时才进行数据绑定
+  .number：获取文本内容以数字类型
+  .trim：去除前后空白
+--&gt;
+</code></pre></div><hr> <h5 id="计算属性、监听属性"><a href="#计算属性、监听属性" class="header-anchor">#</a> 计算属性、监听属性</h5> <div class="language- extra-class"><pre class="language-text"><code>&lt;td align=&quot;center&quot;&gt;
+  $: {{ dollar }}
+  $: {{ getDollar() }}
+&lt;/td&gt;
+&lt;script&gt;
+new Vue({
+      el: '#div1',
+      data: {
+          exchange:6.4,
+          rmb:0
+      },
+      computed:{
+          dollar:function() {
+              return this.rmb / this.exchange;
+          }
+      },
+      methods:{
+          getDollar:function() {
+              return this.rmb / this.exchange;
+          }
+      }，
+      watch:{
+          rmb:function(val) {
+              this.rmb = val;
+              this.dollar = this.rmb / this.exchange;
+          },
+          dollar:function(val) {
+              this.dollar = val;
+              this.rmb = this.dollar * this.exchange;
+          },
+      }
+    })
+&lt;/script&gt;
+
+&lt;!--
+  computed有缓存，结束复杂计算的时间；
+  methods每次都会调用
+--&gt;
+
+&lt;!--
+  使用watch监听属性，val为新值
+--&gt;
+</code></pre></div><hr> <h5 id="过滤器"><a href="#过滤器" class="header-anchor">#</a> 过滤器</h5> <div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;div1&quot;&gt;
+    &lt;table align=&quot;center&quot; &gt;
+        &lt;tr class=&quot;firstLine&quot;&gt;
+            &lt;td&gt;输入数据&lt;/td&gt;
+            &lt;td&gt;过滤后的结果&lt;/td&gt;
+        &lt;/tr&gt;      
+        &lt;tr&gt;
+            &lt;td align=&quot;center&quot;&gt;
+                &lt;input v-model= &quot;data&quot;  /&gt;
+            &lt;/td&gt;
+            &lt;td align=&quot;center&quot;&gt;
+                {{ data|capitalize|capitalizeLastLetter }}
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/div&gt;
+&lt;script&gt;
+new Vue({
+      el: '#div1',
+      data: {
+          data:''
+      },
+      filters:{
+          capitalize:function(value) {
+                if (!value) return '' //如果为空，则返回空字符串
+                value = value.toString()
+                return value.charAt(0).toUpperCase() + value.substring(1)
+          },
+          capitalizeLastLetter:function(value) {
+                if (!value) return '' //如果为空，则返回空字符串
+                value = value.toString()
+                return value.substring(0,value.length-1)+ value.charAt(value.length-1).toUpperCase()
+          }
+      }
+    })
+&lt;/script&gt;
+
+&lt;!-- 全局过滤器 --&gt;
+Vue.filter('capitalize', function (value) {
+    if (!value) return ''
+    value = value.toString()
+    return value.charAt(0).toUpperCase() + value.slice(1)
+})
+</code></pre></div><hr> <h5 id="组件"><a href="#组件" class="header-anchor">#</a> 组件</h5> <div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;div1&quot;&gt;
+    &lt;product&gt;&lt;/product&gt;
+&lt;/div&gt;
+&lt;script&gt;
+new Vue({
+  el: '#div1',
+  components:{
+      'product':{
+          template:'&lt;div class=&quot;product&quot; &gt;&lt;/div&gt;'
+      }
+  }
+})
+&lt;/script&gt;
+
+&lt;!-- 全局组件 --&gt;
+Vue.component('product', {
+      template: '&lt;div class=&quot;product&quot; &gt;&lt;/div&gt;'
+    })
+    
+&lt;!-- 参数 --&gt;
+Vue.component('product', {
+	  props:['name'],
+	  template: '&lt;div class=&quot;product&quot; &gt;{{name}}&lt;/div&gt;'
+	})
+&lt;product name=&quot;123&quot;&gt;&lt;/product&gt;
+
+&lt;!-- 动态参数 --&gt;
+&lt;div id=&quot;div1&quot;&gt;
+    组件外的值：&lt;input v-model=&quot;outName&quot; &gt;&lt;br&gt;
+    &lt;product v-bind:name=&quot;outName&quot;&gt;&lt;/product&gt;
+&lt;/div&gt;
+&lt;script&gt;
+Vue.component('product', {
+      props:['name'],
+      template: '&lt;div class=&quot;product&quot; &gt;{{name}}&lt;/div&gt;'
+    })
+new Vue({
+  el: '#div1',
+  data:{
+      outName:'产品名称'
+  }
+})
+&lt;/script&gt;
+
+&lt;!-- 使用JSON数组 --&gt;
+&lt;div id=&quot;div1&quot;&gt;
+    &lt;product v-for=&quot;item in products&quot; v-bind:product=&quot;item&quot;&gt;&lt;/product&gt;
+&lt;/div&gt;
+&lt;script&gt;
+Vue.component('product', {
+      props:['product'],
+      template: '&lt;div class=&quot;product&quot; v-on:click=&quot;increaseSale&quot;&gt;{{product.name}} 销量: {{product.sale}} &lt;/div&gt;',
+      methods:{
+          increaseSale:function(){
+              this.product.sale++
+          }
+      }
+    })
+new Vue({
+  el: '#div1',
+  data:{
+      products:[
+                {&quot;name&quot;:&quot;1,&quot;sale&quot;:&quot;18&quot;},
+                {&quot;name&quot;:&quot;2&quot;:&quot;35&quot;},
+                {&quot;name&quot;:&quot;3&quot;,&quot;sale&quot;:&quot;29&quot;}
+                ]
+  }
+})
+&lt;/script&gt;
+
+&lt;!-- template构建 --&gt;
+var tempalateDiv=document.getElementById(&quot;tempalate&quot;).innerHTML;
+var templateObject = {
+    props: ['product'],
+    template: tempalateDiv,
+      methods: {
+            increaseSales: function () {
+                this.product.sale = parseInt(this.product.sale);
+              this.product.sale += 1
+              this.$emit('increment')
+            }
+          }
+}
+Vue.component('product', templateObject)
+</code></pre></div><hr> <h5 id="自定义指令"><a href="#自定义指令" class="header-anchor">#</a> 自定义指令</h5> <div class="language- extra-class"><pre class="language-text"><code>&lt;!--
+  1. 使用Vue.directive 来自定义
+  2. 第一个参数是 指令名称
+  3. el 表示当前html dom对象
+  4. 在方法体内操控当前元素
+--&gt;
+Vue.directive('xart', function (el) {
+    el.innerHTML = el.innerHTML + ' ( x-art ) '
+    el.style.color = 'pink'
+})
+&lt;div v-xart&gt; 好好学习，天天向上 &lt;/div&gt;
+
+&lt;!-- 带参数 --&gt;
+Vue.directive('xart', function (el,binding) {
+	el.innerHTML = el.innerHTML + '( ' + binding.value.text + ' )'
+	el.style.color = binding.value.color
+})
+&lt;div v-xart=&quot;{color:'red',text:'best learning video'}&quot;&gt; 好好学习，天天向上 &lt;/div&gt;
+</code></pre></div><hr> <h5 id="路由"><a href="#路由" class="header-anchor">#</a> 路由</h5> <div class="language- extra-class"><pre class="language-text"><code>&lt;!-- 相当于局部刷新 --&gt;
+&lt;!-- 需要额外的库：vue-router.min.js --&gt;
+&lt;div id=&quot;app&quot;&gt;
+    &lt;div class=&quot;menu&quot;&gt;
+        &lt;!-- router-link 相当于就是超链 to 相当于就是 href --&gt;
+        &lt;router-link to=&quot;/user&quot;&gt;用户管理&lt;/router-link&gt;
+        &lt;router-link to=&quot;/product&quot;&gt;产品管理&lt;/router-link&gt;
+        &lt;router-link to=&quot;/order&quot;&gt;订单管理&lt;/router-link&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;workingRoom&quot;&gt;
+        &lt;!-- 点击上面的/user,那么/user 对应的内容就会显示在router-view 这里 --&gt;
+         &lt;router-view&gt;&lt;/router-view&gt;   
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    /* 申明三个模板( html 片段 ) */
+    var user = { template: '&lt;p&gt;用户管理页面的内容&lt;/p&gt;' };
+    var second = { template: '&lt;p&gt;产品管理页面的内容&lt;/p&gt;' };
+    var order = { template: '&lt;p&gt;订单管理页面的内容&lt;/p&gt;' };
+    /* 定义路由 */
+    var routes = [
+        { path: '/', redirect: '/user'}, // 这个表示会默认渲染 /user，没有这个就是空白
+        { path: '/user', component: user },
+        { path: '/product', component: second },
+        { path: '/order', component: order }
+    ];
+    /* 创建VueRouter实例 */
+    var router = new VueRouter({
+        routes:routes
+    });
+    /* 给vue对象绑定路由 */
+    new Vue({
+        el:&quot;#app&quot;,
+        router
+    })
+&lt;/script&gt;
+</code></pre></div><hr> <h5 id="钩子函数"><a href="#钩子函数" class="header-anchor">#</a> 钩子函数</h5> <ul><li>钩子函数又叫做回调函数，或者事件响应函数。 指的是一个指令在创建过程中，经历不同生命周期的时候，vue.js 框架调用的函数。</li></ul> <hr> <h5 id="ajax"><a href="#ajax" class="header-anchor">#</a> ajax</h5> <blockquote><p>Vue.js 并没有限制使用哪种方式进行 ajax 访问，所以可以使用如下方式</p> <ol><li>原生 ajax</li> <li>JQuery</li> <li>vue-resource</li> <li>fetch.js</li> <li>axios.js</li></ol></blockquote> <blockquote><p>到底用哪种方式呢？</p> <ol><li>原生一般不在项目中直接用</li> <li>jquery 不如4，5方便</li> <li>vue-resource 已经不再维护了，所以不推荐</li> <li>fetch.js 是 vue.js 官方推荐</li> <li>axios.js 是vue.js 官方推荐</li></ol></blockquote> <hr> <h5 id="fetch-js"><a href="#fetch-js" class="header-anchor">#</a> fetch.js</h5> <ul><li>一种ajax框架</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;hero&quot;&gt;
+&lt;/div&gt;
+&lt;script&gt;
+var url = &quot;/json.txt&quot;
+fetch(url).then(function(response) {
+  response.json().then(function (jsonObject) {
+    var jsonString = JSON.stringify(jsonObject)
+    document.getElementById(&quot;hero&quot;).innerHTML = &quot;通过fetch获取到的json数据：&quot;+ jsonString;
+  })
+}).catch(function(err){
+    console.log(&quot;Fetch错误:&quot;+err);
+})
+&lt;/script&gt;
+</code></pre></div><hr> <h5 id="axios-js"><a href="#axios-js" class="header-anchor">#</a> axios.js</h5> <ul><li>一种ajax框架</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;hero&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+    var /json.txt&quot;
+    axios.get(url).then(function(response) {
+        var jsonObject = response.data;
+        var jsonString = JSON.stringify(jsonObject)
+        document.getElementById(&quot;hero&quot;).innerHTML = &quot;通过 axios 获取到的json数据：&quot;+ jsonString;
+    })
+&lt;/script&gt;
+</code></pre></div><hr> <h5 id="vue-cli"><a href="#vue-cli" class="header-anchor">#</a> vue-cli</h5> <ul><li>vue-cli 是 vue 出来的一个脚手架，可以进行 组件式地开发</li> <li>vue-cli ，单页应用 SPA(single page application) 开发的时候是很方便的，但是多页复杂系统的话用起来就比较麻烦了。并不是 vue-cli 不支持 多页系统， 而是为了让 vue-cli 支持多页系统，需要额外装很多插件和工具。</li></ul> <hr> <h5 id="crud"><a href="#crud" class="header-anchor">#</a> crud</h5></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/front/vue/" class="prev router-link-active">
+        概述
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.93b6cd49.js" defer></script><script src="/assets/js/2.2253adde.js" defer></script><script src="/assets/js/13.9dca66f7.js" defer></script>
+  </body>
+</html>
